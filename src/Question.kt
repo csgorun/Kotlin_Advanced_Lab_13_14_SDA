@@ -1,24 +1,30 @@
 class Question<T>(
     val questionText: String,
     val answer: T,
-    val difficulty: String
+    val difficulty: Difficulty
 )
+
+enum class Difficulty {
+    EASY,
+    MEDIUM,
+    HARD
+}
 
 fun main(){
     val question1 = Question<String>(
         questionText = "Речка с пятила с ума - По домам пошла сама. ___",
         answer = "Водопровод",
-        difficulty = "medium"
+        difficulty = Difficulty.MEDIUM
     )
     val question2 = Question<Boolean>(
         questionText = "Небо зеленое. Правда или ложь",
         answer = false,
-        difficulty = "easy"
+        difficulty = Difficulty.EASY
     )
     val question3 = Question<Int>(
         questionText = "Сколько дней между полнолуниями?",
         answer = 28,
-        difficulty = "hard"
+        difficulty = Difficulty.HARD
     )
 
     println(question1.answer)
